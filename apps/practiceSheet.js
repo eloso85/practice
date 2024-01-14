@@ -91,4 +91,108 @@ function isLeapYear(start, end) {
     });
 }
 
-isLeapYear(2000, 2020);
+// isLeapYear(2000, 2020);
+
+// 7. Write a JavaScript program to find out if 1st January will be a Sunday between 2014 and 2050.  
+
+function isASunday() {
+
+    for (let year = 2014; year <= 2050; year++) {
+        const d = new Date(year, 0, 1);
+
+        if (d.getDate() === 0) {
+            console.log(`1st January is being a Sunday   + ${year}`);
+
+        }
+    }
+
+
+}
+
+isASunday()
+
+//8. Write a JavaScript program where the program takes a random integer between 1 and 10, and the user is then prompted to input a guess number. The program displays a message "Good Work" if the input matches the guess number otherwise "Not matched". 
+
+
+function guessNumber(user) {
+    randomInt = Math.floor(Math.random() * 11)
+    randomInt == user ? console.log("You have guessed right") : console.log("You have guessed wrong");
+}
+
+guessNumber(5)
+
+//9. Write a JavaScript program to calculate the days left before Christmas. 
+function daysTillChristmas() {
+    let today = new Date()
+    let year = today.getFullYear()
+    let cmas = new Date(year, 11, 25)
+
+    if (today.getMonth() === 11 && today.getDate() > 25) {
+        cmas.setFullYear(year + 1)
+    }
+    const diff = cmas - today;
+    return Math.ceil(diff / (1000 * 60 * 60 * 24))
+
+}
+
+console.log(daysTillChristmas());
+
+// 10. Write a JavaScript program to calculate multiplication and division of two numbers (input from the user).  
+function calculate(a, b) {
+    return b == 0
+        ? { error: "Division by zero is not allowed" }
+        : { multiplication: a * b, division: a / b };
+}
+let result = calculate(5, 5)
+console.log(result);
+
+// 11. Write a JavaScript program to convert temperatures to and from Celsius, Fahrenheit.  
+// [ Formula : c/5 = (f-32)/9 [ where c = temperature in Celsius and f = temperature in Fahrenheit ]
+// Expected Output :
+// 60°C is 140 °F
+// 45°F is 7.222222222222222°C
+
+function convertTemp(c, f) {
+    let cToFahr = c * 9 / 5 + 32
+    let fToCel = (f - 32) * 5 / 9
+
+    console.log(cToFahr, fToCel);
+}
+
+convertTemp(60, 45)
+
+// Write a JavaScript program to get the website URL (loading page).  
+
+function getCurrentPageUrl() {
+    return window.location.href;
+}
+// console.log("Current page URL is: " + getCurrentPageUrl());
+
+//13. Write a JavaScript exercise to create a variable using a user-defined name. 
+
+function createUserCreatedVariable() {
+    let var_name = 'alex';
+    let n = 10
+
+    this[var_name] = n
+
+    console.log(this[var_name]);
+}
+createUserCreatedVariable()
+
+//14. Write a JavaScript exercise to get the filename extension. 
+
+function getFileExtension(filename) {
+    let index = filename.lastIndexOf('.')
+
+    if (index > 0) {
+        return filename.substring(index + 1);
+    } else {
+        return null
+    }
+}
+
+console.log(getFileExtension("document.docx")); // Output: docx
+console.log(getFileExtension("image.jpeg"));    // Output: jpeg
+console.log(getFileExtension("archive.tar.gz"));// Output: gz
+console.log(getFileExtension("no_extension"));  // Output: null
