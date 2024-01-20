@@ -196,3 +196,148 @@ console.log(getFileExtension("document.docx")); // Output: docx
 console.log(getFileExtension("image.jpeg"));    // Output: jpeg
 console.log(getFileExtension("archive.tar.gz"));// Output: gz
 console.log(getFileExtension("no_extension"));  // Output: null
+
+//15. Write a JavaScript program to get the difference between a given number and 13, if the total of number is broader than 13 return double the absolute difference. 
+
+function isGreater(num) {
+    let a = num - 13
+
+    if (a > 13) {
+        return a * 2
+    } else {
+        return a
+    }
+}
+
+console.log(isGreater(27));
+
+//16. Write a JavaScript program to compute the sum of the two given integers. If the two values are the same, then return triple their sum. 
+
+function sumOfTwo(num1, num2) {
+    let sum = num1 + num2
+
+    if (num1 == num2) {
+        return sum * 3
+    } else {
+        return sum
+    }
+}
+
+console.log(sumOfTwo(5, 5));
+
+//Write a JavaScript program to compute the absolute difference between a specified number and 19. Returns triple the absolute difference if the specified number is greater than 19
+function differenceOrTriple(number) {
+    const difference = Math.abs(number - 19);
+
+    if (number > 19) {
+        return 3 * difference;
+    } else {
+        return difference;
+    }
+}
+
+// Test the function
+console.log(differenceOrTriple(15)); // Output: 4
+console.log(differenceOrTriple(22)); // Output: 9
+
+//Write a JavaScript program to check a pair of numbers and return true if one of the numbers is 50 or if their sum is 50.  
+function isFiftyOrSumFifty(a, b) {
+    return a === 50 || b === 50 || (a + b) === 50;
+}
+
+// Test the function
+console.log(isFiftyOrSumFifty(25, 25)); // Output: true
+console.log(isFiftyOrSumFifty(50, 10)); // Output: true
+console.log(isFiftyOrSumFifty(20, 20)); // Output: false
+
+//19. Write a JavaScript program to check whether a given integer is within 20 of 100 or 400
+function integerBetween(n) {
+    if (Math.abs(100 - n) <= 20 || (Math.abs(400 - n) <= 20)) {
+        return console.log(`${n} is ${integerBetween ? 'within' : 'not within'} 20 of either 100 or 400.`);
+    }
+}
+
+integerBetween(80)
+
+//20. Write a JavaScript program to check two given integers whether one is positive and another one is negative.
+
+function checkOnePositiveOneNegative(n1, n2) {
+    return (Math.sign(n1) !== Math.sign(n2) && n1 !== 0 && n2 !== 0)
+        ? `Number ${n1} is ${n1 > 0 ? 'positive' : 'negative'} and number ${n2} is ${n2 > 0 ? 'positive' : 'negative'}`
+        : "Both numbers are either positive or negative";
+}
+
+console.log(checkOnePositiveOneNegative(-3, 5)); // Number -3 is negative and number 5 is positive
+
+//21. Write a JavaScript program to create another string by adding "Py" in front of a given string. If the given string begins with "Py" return the original string.
+
+function createString(string) {
+    let addString = 'py'
+    let newString = addString.concat(string)
+
+    return string.startsWith('21: py') ? `Your string starts with py ${string}` : ` 21: Your string did not start with py so we added it the new string is ${newString}`
+
+}
+
+console.log(createString('python'));
+
+//22. Write a JavaScript program to remove a character at the specified position in a given string and return the modified string. 
+
+function chop(p1, p2) {
+    let string = 'This is a long letter'
+    let chopString = string.slice(p1, p2)
+
+    console.log(chopString);
+}
+
+chop(1, 4);
+
+
+//23. Write a JavaScript program to create a new string from a given string by changing the position of the first and last characters. The string length must be broader than or equal to 1. 
+
+function stringManu(str) {
+    // Check if the string length is less than or equal to 1
+    if (str.length <= 1) {
+        console.log('The string is too short to swap characters.');
+        return str; // Return the original string as it is
+    }
+
+    // Extract the first and last characters
+    let firstChar = str[0];
+    let lastChar = str[str.length - 1];
+
+    // Reconstruct the string with swapped characters
+    let swappedString = lastChar + str.substring(1, str.length - 1) + firstChar;
+
+    // Logging for demonstration
+    console.log(`Original string: ${str}`);
+    console.log(`Swapped string: ${swappedString}`);
+
+    // Return the new string
+    return swappedString;
+}
+
+stringManu('alejandro');
+
+//25. Write a JavaScript program to check whether a given positive number is a multiple of 3 or 7. 
+
+function isMultipleOfThreeOrSeven(num) {
+
+    if (num < 0) {
+        console.log('This is not a positive numbe');
+        return false
+    }
+
+    if (num % 7 == 0 || num % 3 == 0) {
+        console.log('true');
+        return true
+
+    } else {
+        console.log('false');
+        return false
+    }
+
+}
+
+isMultipleOfThreeOrSeven(-2)
+
