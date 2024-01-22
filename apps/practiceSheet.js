@@ -341,3 +341,40 @@ function isMultipleOfThreeOrSeven(num) {
 
 isMultipleOfThreeOrSeven(-2)
 
+//26. Write a JavaScript program to create a string from a given string. This is done by taking the last 3 characters and adding them at both the front and back. The string length must be 3 or more. 
+
+function threeString(str) {
+    if (str.length <= 3) {
+        console.log("string must be larget then 3 characters");
+        return false
+    }
+
+    let firstThree = str.slice(0, 3)
+    let lastThree = str.slice(str.length - 3)
+
+    let newString = lastThree + str.substring(3, str.length - 3) + firstThree
+    console.log(`Original string: ${str}`);
+    console.log(`Swapped string: ${newString}`);
+
+    return newString
+}
+
+threeString('LIFEHACKS')
+
+//27. Write a JavaScript program to check whether a string starts with 'Java' if it does not otherwise.  
+
+function hasJava(str) {
+    let string = str.toLowerCase().startsWith('java')
+
+    if (string) {
+        console.log(`${str} does start java`);
+    } else {
+        console.log(`${str} does not start java`);
+    }
+
+    console.log(string);
+}
+
+hasJava('javascript')
+
+
