@@ -377,4 +377,65 @@ function hasJava(str) {
 
 hasJava('javascript')
 
+//28. Write a JavaScript program to check whether two given integer values are in the range 50..99 (inclusive). Return true if either of them falls within the range.  
 
+function checkInt(num1, num2) {
+    // Check if either num1 or num2 is within the range 50 to 99
+    if ((num1 >= 50 && num1 <= 99) || (num2 >= 50 && num2 <= 99)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(checkInt(2, 2)); // Should return false
+console.log(checkInt(55, 10)); // Should return true
+console.log(checkInt(100, 60));
+
+/*30. Write a JavaScript program to check whether a string "Script" appears at the 5th (index 4) position in a given string. 
+If "Script" appears in the string, return the string without "Script" otherwise return the original one.  */
+
+function checkString(str) {
+    let userString = str.toLowerCase().lastIndexOf("script");
+
+    if (userString == 4) {
+        return console.log(`${str} has ${str.slice(4, str.length)} in the 5th postion`);
+    } else {
+        console.log(`${str} does not`);
+    }
+
+}
+
+checkString("javaSCRIPT")
+
+//31. Write a JavaScript program to find the largest of three given integers.  
+
+function largestInt(num1, num2, num3) {
+    let intArray = [];
+    intArray.push(num1, num2, num3)
+
+    console.log(Math.max(...intArray))
+}
+
+largestInt(24, 6, -99)
+
+
+//32. Write a JavaScript program to find the closest value to 100 from two numerical values.  
+
+function closeToHundred(num1, num2) {
+    let diff1 = Math.abs(100 - num1);
+    let diff2 = Math.abs(100 - num2);
+
+    if (diff1 < diff2) {
+        console.log(`${num1} is closer to 100`);
+        return num1;
+    } else if (diff2 < diff1) {
+        console.log(`${num2} is closer to 100`);
+        return num2;
+    } else {
+        console.log('Both numbers are equally close to 100');
+        return 'Both numbers are equally close to 100';
+    }
+}
+
+closeToHundred(25, 35); // Example usage
