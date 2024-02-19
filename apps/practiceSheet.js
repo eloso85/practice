@@ -438,4 +438,46 @@ function closeToHundred(num1, num2) {
     }
 }
 
-closeToHundred(25, 35); // Example usage
+closeToHundred(25, 35);
+
+//33. Write a JavaScript program to check whether two numbers are in the range 40..60 or 70..100 inclusive. 
+
+function checkRange(num1, num2) {
+    let inRange = function (num, start, end) {
+        return num >= start && num <= end;
+    }
+
+    if ((inRange(num1, 40, 60) && inRange(num2, 40, 60)) ||
+        (inRange(num1, 70, 100) && inRange(num2, 70, 100))) {
+        console.log('true');
+    } else {
+        console.log('false');
+    }
+}
+
+checkRange(41, 59)
+
+//34. Write a JavaScript program to find the largest number from the two given positive integers. The two numbers are in the range 40..60 inclusive. 
+function largestInt(num1, num2) {
+    let largest = Math.max(num1, num2)
+    let inRange = function (num, start, end) {
+        return num >= start && num <= end;
+
+    }
+    if (inRange(num1, 40, 60) && inRange(num2, 40, 60)) {
+        console.log(`${largest} is between 40 - 60 `);
+    } else {
+        console.log("Neither number is between 40 - 60 ");
+    }
+
+}
+
+largestInt(40, 60)
+
+//35. Write a program to check whether a specified character exists between the 2nd and 4th positions in a given string. 
+function isBetween(char, string) {
+    let check = string.substring(1, 4)
+    console.log(check);
+}
+
+isBetween("a", "javascript")
