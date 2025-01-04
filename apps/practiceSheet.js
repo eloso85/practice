@@ -481,3 +481,86 @@ function isBetween(char, string) {
 }
 
 isBetween("a", "javascript")
+
+
+//36. Write a JavaScript program that checks whether the last digit of three positive integers is the same.
+
+function checkLastDigit(a, b, c) {
+
+    if (a > 0 && b > 0 && c > 0) {
+        return console.log('all ints are postive');
+    } else {
+        return console.log('their is a negative int');
+    }
+
+
+}
+
+checkLastDigit(1, 2, 3)
+
+//37. Modify String Based on Length (First 3 Lowercase/Uppercase)
+
+function firstThree(string) {
+    if (string.length > 3) {
+        let newString = string.slice(0, 3).toLowerCase() + string.slice(3);
+        console.log(newString);
+
+    } else {
+        console.log("Nothing here ");
+
+    }
+}
+firstThree("PYT")
+
+//38. Evaluate Grades Based on Total Marks and Final Exam
+
+function gradeChecker(arry, isExam) {
+    let averageGrade = arry.reduce((sum, num) => sum + num, 0) / arry.length;
+    if (averageGrade >= 89 && isExam) {
+        console.log(`Your average grade is ${averageGrade} and this includes your main exam`);
+
+    } else {
+        console.log("false");
+
+    }
+    // console.log(averageGrade);
+
+
+
+}
+
+gradeChecker([80, 95, 99, 99], true)
+
+//Sum Two Integers and Return Based on Range
+
+function sumOfRange(int1, int2) {
+    let sumTotal = int1 + int2;
+
+    if (sumTotal >= 50 && sumTotal <= 80) {
+        console.log('65');
+
+    } else {
+        console.log('80');
+
+    }
+
+}
+sumOfRange(5, 20)
+
+/**
+ * Check if Integer is 8 or Difference/Sum Equals 8
+ * @param {number} int1 - The first int
+ * @param {number} int2 - The Second int
+ * @returns {boolean} - Returns true if any of the conditions are met
+ */
+
+const isIntEight = (int1, int2) => {
+    const isEitherEight = int1 === 8 || int2 === 8;
+    const isSumEight = int1 + int2 === 8;
+    const isDiffEight = Math.abs(int1 - int2) === 8;
+
+    return isEitherEight || isSumEight || isDiffEight
+
+};
+
+console.log(isIntEight(5, 3));
