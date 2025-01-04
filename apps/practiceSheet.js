@@ -531,7 +531,7 @@ function gradeChecker(arry, isExam) {
 
 gradeChecker([80, 95, 99, 99], true)
 
-//Sum Two Integers and Return Based on Range
+//39.Sum Two Integers and Return Based on Range
 
 function sumOfRange(int1, int2) {
     let sumTotal = int1 + int2;
@@ -548,7 +548,7 @@ function sumOfRange(int1, int2) {
 sumOfRange(5, 20)
 
 /**
- * Check if Integer is 8 or Difference/Sum Equals 8
+ * 40. Check if Integer is 8 or Difference/Sum Equals 8
  * @param {number} int1 - The first int
  * @param {number} int2 - The Second int
  * @returns {boolean} - Returns true if any of the conditions are met
@@ -564,3 +564,20 @@ const isIntEight = (int1, int2) => {
 };
 
 console.log(isIntEight(5, 3));
+
+/**
+ * Return 30, 40, or 20 Based on Same Numbers
+ * @param {number} num1 - this is the first number
+ * @param {number} num2 - this is the first number
+ * @param {number} num3 - this is the first number
+ * @returns {number} - it returns 30. If two numbers are the same, it returns 40. Otherwise, it returns 20
+ */
+
+const checkThree = (num1, num2, num3) => {
+    const allSame = num1 === num2 && num2 === num3;
+    const onlyTwo = num1 === num2 || num2 === num3 || num3 === num1;
+
+    return allSame ? 30 : onlyTwo ? 40 : 20;
+}
+
+console.log(checkThree(5, 5, 5))
