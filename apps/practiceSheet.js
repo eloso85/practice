@@ -566,7 +566,7 @@ const isIntEight = (int1, int2) => {
 console.log(isIntEight(5, 3));
 
 /**
- * Return 30, 40, or 20 Based on Same Numbers
+ * 41 Return 30, 40, or 20 Based on Same Numbers
  * @param {number} num1 - this is the first number
  * @param {number} num2 - this is the first number
  * @param {number} num3 - this is the first number
@@ -581,3 +581,42 @@ const checkThree = (num1, num2, num3) => {
 }
 
 console.log(checkThree(5, 5, 5))
+
+
+/**
+ * 
+ * @param {number} num1 - this is the first number 
+ * @param {number} num2 - this is the second number
+ * @param {number} num3 - this is the third number
+ * @returns {bolean} - the final reault will return "strict mode " or "Soft Mode"
+ */
+
+const strictOrSoft = (num1, num2, num3) => {
+    const isStrict = num1 < num2 && num2 < num3;
+    const isSoft = (num1 <= num2 || num2 <= num3);
+
+    return isStrict ? "Stirct Mode" : isSoft ? "Soft Mode" : "Undefined";
+}
+
+console.log(strictOrSoft(10, 15, 31))
+console.log(strictOrSoft(24, 22, 31))
+console.log(strictOrSoft(50, 21, 15))
+
+/**
+ * 43 Check the Rightmost Digits of the Three Numbers
+ */
+
+const rightMost = (n1, n2, n3) => {
+    const numbers = [n1, n2, n3]
+    const rightMostDigit = numbers[0] % 10;
+
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] % 10 !== rightMostDigit) {
+            return "They do not match"
+        }
+    }
+
+    return "They Match"
+}
+
+console.log(rightMost(22, 32, 42))
