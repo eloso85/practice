@@ -604,6 +604,13 @@ console.log(strictOrSoft(50, 21, 15))
 
 /**
  * 43 Check the Rightmost Digits of the Three Numbers
+ * This function checks whether the rightmost digits of three given numbers are the same.
+ * If all rightmost digits match, it returns "They Match". Otherwise, it returns "They do not match".
+ *
+ * @param {number} n1 - The first number to check
+ * @param {number} n2 - The second number to check
+ * @param {number} n3 - The third number to check
+ * @returns {string} - "They Match" if all rightmost digits are the same, otherwise "They do not match"
  */
 
 const rightMost = (n1, n2, n3) => {
@@ -620,3 +627,144 @@ const rightMost = (n1, n2, n3) => {
 }
 
 console.log(rightMost(22, 32, 42))
+
+/**
+ * 44. This JavaScript program evaluates three given integers to determine if one number is greater 
+ * than or equal to 20 and less than the other two.
+ * 
+ * @param {number} n1 - First number
+ * @param {number} n2 - Second number
+ * @param {number} n3 - Third number
+ * @returns {boolean} - True if one number meets the conditions, otherwise false
+ */
+const evaluateNumbers = (a, b, c) =>
+    (a >= 20 && a < b && a < c) ||
+    (b >= 20 && b < a && b < c) ||
+    (c >= 20 && c < a && c < b);
+
+// Example usage
+console.log(evaluateNumbers(25, 30, 22)); // true
+console.log(evaluateNumbers(21, 19, 50)); // false
+console.log(evaluateNumbers(20, 25, 10)); // true
+
+
+
+
+/**
+ * Check if Integer is 15, or Sum/Difference is 15d
+ * @param {number} num1 - first number to evaluatee
+ * @param {number} num2 - second number to evaluate
+ * 
+ * @returns {bolean} - true if any of the requirments are met
+ */
+
+const isfifteen = (num1, num2) => {
+
+    if (num1 === 15 || num2 === 15 || num1 + num2 || Math.abs(num1 - num2 === 15)) {
+        return true
+    }
+}
+
+console.log(isfifteen(15, 20))
+
+/**
+ * 47Check if only one integar is multiple of 7 or 11
+ */
+
+const sevenOrEleven = (int1) => {
+
+    return int1 % 7 === 0 || int1 % 11 === 0;
+
+}
+
+console.log(sevenOrEleven(2));
+
+/**
+ * Reverse a given String
+ * 
+ */
+
+const stringReverse = (str) => {
+    const stringArray = str.split("").reverse().join("")
+    return stringArray
+}
+
+console.log(stringReverse('welcome'))
+
+
+
+/**
+ * 48 character plus 1
+ */
+
+const characterPlusOne = (str) => {
+    const charCodes = []
+    for (let i = 0; i < str.length; i++) {
+        charCodes.push(str.charCodeAt(i) + 1);
+    }
+    return charCodes.map(code => String.fromCharCode(code)).join("")
+
+
+}
+
+console.log(characterPlusOne("python"));
+
+/**
+ * 49 Capaitalize First Letter of Each Word in String
+ * 
+ */
+
+const capFirstLetterOfWord = (str) => {
+    let stringArray = str.split(" ")
+    for (let i = 0; i < stringArray.length; i++) {
+        //Capitalize the first letter and concatenate with the rest of the word
+        stringArray[i] = stringArray[i].charAt(0).toUpperCase() + stringArray[i].slice(1);
+    }
+    return stringArray.join(" ")
+}
+console.log(capFirstLetterOfWord("the quick brown fox"))
+
+/**
+ * Transform a number to Hours and Minutes
+ */
+
+const numToHoursAndMintues = (num) => {
+    let time = Math.floor(num / 60) + ":" + num % 60
+
+    return time
+}
+
+console.log(numToHoursAndMintues(1441))
+
+/**
+ * Sort Letters Alphabetically in String
+ * 
+ */
+
+const sortAlpha = (str) => {
+    let stringArray = str.split("").sort().join("")
+
+    return stringArray
+}
+
+console.log(sortAlpha("Python"))
+
+/**
+ * Check 'a' and 'b' Seperated by Exactly 3 places 
+ */
+
+const byThree = (string) => {
+    index1 = string.indexOf("a");
+    index2 = string.indexOf("b");
+
+    if (index1 === -1 || index2 === -1) {
+        return false
+    }
+
+    return Math.abs(index2 - index1) === 4;
+}
+
+console.log(byThree("chainsbreak"));
+console.log(byThree("pane borrowed"));
+console.log(byThree("abcheck"))
+
